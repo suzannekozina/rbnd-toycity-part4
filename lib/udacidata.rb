@@ -8,8 +8,10 @@ class Udacidata
   # Return an array of Product objects representing all the data in the database
   def self.all
     products = []
-    products.each do
-    end
+    #build out next...
+    # CSV.foreach('customers.csv') do |row|
+    #   puts row.inspect
+    # end
   end
 
 

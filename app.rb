@@ -8,14 +8,14 @@ include Analyzable
 
 db_create
 #
-# puts "-------------------"
-# puts "RETURN ALL PRODUCTS"
-# puts "-------------------"
-# print Product.all
-# puts
-# puts "-----------------"
-# puts "CREATE PRODUCTS"
-# puts "-----------------"
+puts "-------------------"
+puts "RETURN ALL PRODUCTS"
+puts "-------------------"
+print Product.all
+puts
+puts "-----------------"
+puts "CREATE PRODUCTS"
+puts "-----------------"
 # print Product.create(brand: "Udacity", name: "yoyo", price: 10.00)
 # print Product.create(brand: "Bouncy", name: "ball", price: 12.00)
 # print Product.create(brand: "MyCool", name: "dollhouse", price: 14.40)
