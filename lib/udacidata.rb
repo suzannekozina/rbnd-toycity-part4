@@ -3,19 +3,6 @@ require_relative 'errors'
 require 'csv'
 
 class Udacidata
-
-
-  # Return an array of Product objects representing all the data in the database
-  def self.all
-    products = []
-    #build out next...
-    # CSV.foreach('customers.csv') do |row|
-    #   puts row.inspect
-    # end
-  end
-
-
-  def self.create(attributes = nil)
   # If the object's data is already in the database
   # create the object
   # return the object
@@ -24,6 +11,26 @@ class Udacidata
   # create the object
   # save the data in the database
   # return the object
+CSV_DATA  = File.dirname(__FILE__) + "/../data/data.csv"
+  def self.create(options = {})
+  product = new(options)
+    unless all.any? { |item| item.id == product.id }
+      CSV.open(CSV_DATA, 'a+') do |csv|
+        csv << [product.id, product.brand, product.name, product.price]
+      end
+    end
+  product
+  end
+
+  # Return an array of Product objects representing all the data in the database
+  # Used 'arr' to help me start thinking of CSV in terms of arrays
+  def self.all
+    products = []
+    CSV.foreach(CSV_DATA, headers: true) do |arr|
+      products << new(id: arr['id'].to_i, brand: arr['brand'], name: arr['product'],
+                      price: arr['price'].to_f)
+    end
+    products
   end
 
   # Return a Product object that represents the first product in the database
