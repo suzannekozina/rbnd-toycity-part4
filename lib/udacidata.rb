@@ -25,21 +25,14 @@ class Udacidata
   # save the data in the database
   # return the object
   end
-
-  # Return a Product object that represents the first product in the database
-  def first
-  end
-
+# to test
   # Return an array of Product objects for the first n products in the database
-  def first(n)
+  def self.first(*n)
+    n > 1 ? all.take(n) : all.first
   end
-
-  # Return a Product object that represents the last product in the database
-  def last
-  end
-
   # Return an array of Product objects for the last n products in the database
-  def last(n)
+  def self.last(*n)
+    n > 1 ? all.last(n) : all.last
   end
 
   # Delete the product corresponding to the given id from the database, and
