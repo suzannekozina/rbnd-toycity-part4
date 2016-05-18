@@ -23,20 +23,20 @@ print Product.create(brand: "MySoft", name: "stuffed animal", price: 2.09)
 print Product.create(brand: "AllMy", name: "yoyo", price: 1.00)
 print Product.create(brand: "Udacity", name: "doll", price: 5.99)
 
-# puts "-------------------"
-# puts "RETURN ALL PRODUCTS"
-# puts "-------------------"
-# print Product.all
+puts "-------------------"
+puts "RETURN ALL PRODUCTS"
+puts "-------------------"
+print Product.all
 #
 # puts "--------------------------------------------------------------"
 # puts "TEST ERROR HANDLING FOR DELETE - COMMENT OUT BEFORE SUBMITTING"
 # puts "--------------------------------------------------------------"
 # print Product.destroy(1000000000000)
 #
-puts "------------------------------------------------------------"
-puts "TEST ERROR HANDLING FOR FIND - COMMENT OUT BEFORE SUBMITTING"
-puts "------------------------------------------------------------"
-print Product.find(1)
+# puts "------------------------------------------------------------"
+# puts "TEST ERROR HANDLING FOR FIND - COMMENT OUT BEFORE SUBMITTING"
+# puts "------------------------------------------------------------"
+# print Product.find(1000000000000)
 #
 # puts
 # puts "--------------------"
@@ -76,10 +76,10 @@ print Product.find(1)
 # print Product.find(4).update(brand: "NewBrand")
 #
 # puts
-# puts "--------------"
-# puts "FIND PRODUCT 1"
-# puts "--------------"
-# print Product.find(1)
+puts "--------------"
+puts "FIND PRODUCT 1"
+puts "--------------"
+print Product.find(1)
 #
 # puts
 # puts "-----------------"
