@@ -3,14 +3,25 @@ require_relative 'errors'
 require 'csv'
 
 class Udacidata
+<<<<<<< Updated upstream
   # If the object's data is already in the database
   # create the object
   # return the object
+=======
+  # CONSTANT for datasource and pseudovariable for datasource-file
+  CSV_DATA = File.dirname(_FILE_) + "/../data/data.csv"
+
+  def self.create(options = {})
+  # If the object's data is already in the database
+  # create the object
+  # and return the object
+>>>>>>> Stashed changes
 
   # If the object's data is not in the database
   # create the object
   # save the data in the database
   # return the object
+<<<<<<< Updated upstream
   CSV_DATA  = File.dirname(__FILE__) + "/../data/data.csv"
   def self.create(options = {})
     product = new(options)
@@ -31,6 +42,19 @@ class Udacidata
     end
     products
   end
+=======
+  end
+
+  # Return an array of Product objects representing all the data in the database
+  def self.all
+    products = []
+    #build out next...
+    # CSV.foreach('customers.csv') do |row|
+    #   puts row.inspect
+    # end
+  end
+
+>>>>>>> Stashed changes
 # to test
   # Return an array of Product objects for the first n products in the database
   def self.first(*n)
