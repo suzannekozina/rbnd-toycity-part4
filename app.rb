@@ -33,11 +33,11 @@ print Product.create(brand: "Udacity", name: "doll", price: 5.99)
 # puts "--------------------------------------------------------------"
 # print Product.destroy(1000000000000)
 #
-puts "------------------------------------------------------------"
-puts "TEST ERROR HANDLING FOR FIND - COMMENT OUT BEFORE SUBMITTING"
-puts "------------------------------------------------------------"
+# puts "------------------------------------------------------------"
+# puts "TEST ERROR HANDLING FOR FIND - COMMENT OUT BEFORE SUBMITTING"
+# puts "------------------------------------------------------------"
 print Product.find(1)
-#
+# #
 # puts
 # puts "--------------------"
 # puts "RETURN FIRST PRODUCT"

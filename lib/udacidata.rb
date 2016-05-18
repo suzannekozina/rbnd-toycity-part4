@@ -3,26 +3,9 @@ require_relative 'errors'
 require 'csv'
 
 class Udacidata
-<<<<<<< Updated upstream
-  # If the object's data is already in the database
-  # create the object
-  # return the object
-=======
   # CONSTANT for datasource and pseudovariable for datasource-file
-  CSV_DATA = File.dirname(_FILE_) + "/../data/data.csv"
-
-  def self.create(options = {})
-  # If the object's data is already in the database
-  # create the object
-  # and return the object
->>>>>>> Stashed changes
-
-  # If the object's data is not in the database
-  # create the object
-  # save the data in the database
-  # return the object
-<<<<<<< Updated upstream
   CSV_DATA  = File.dirname(__FILE__) + "/../data/data.csv"
+
   def self.create(options = {})
     product = new(options)
       unless all.any? { |item| item.id == product.id }
@@ -36,34 +19,22 @@ class Udacidata
   # Used 'arr' to help me start thinking of CSV in terms of arrays
   def self.all
     products = []
-    CSV.foreach(CSV_DATA, headers: true) do |arr|
-      products << new(id: arr['id'].to_i, brand: arr['brand'],
-                      name: arr['product'], price: arr['price'].to_f)
+    CSV.foreach(CSV_DATA, headers: true) do |field|
+      products << new(id: field['id'].to_i, brand: field['brand'],
+                      name: field['product'], price: field['price'].to_f)
     end
     products
   end
-=======
-  end
 
-  # Return an array of Product objects representing all the data in the database
-  def self.all
-    products = []
-    #build out next...
-    # CSV.foreach('customers.csv') do |row|
-    #   puts row.inspect
-    # end
-  end
-
->>>>>>> Stashed changes
 # to test
   # Return an array of Product objects for the first n products in the database
-  def self.first(*n)
-    n > 1 ? all.take(n) : all.first
-  end
+  # def self.first(*n)
+  #   n > 1 ? all.take(n) : all.first
+  # end
   # Return an array of Product objects for the last n products in the database
-  def self.last(*n)
-    n > 1 ? all.last(n) : all.last
-  end
+  # def self.last(*n)
+  #   n > 1 ? all.last(n) : all.last
+  # end
 
   # Delete the product corresponding to the given id from the database, and
   # return a Product object for the product that was deleted.
@@ -84,7 +55,7 @@ class Udacidata
     if all.find{ |product| product.id == id }
       product
     else raise ProductNotFoundError, "Product id NOT found"
-    end 
+    end
   end
 
   # return a Product object for the first product in the database that has a
