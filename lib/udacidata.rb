@@ -63,7 +63,11 @@ class Udacidata
   # Return a Product object for the product with a given product id
   # Add a ProductNotFoundError error class to errors.rb and raise the error
   # when the product ID can’t be found
-  def find
+  def find(id)
+    if all.find{ |product| product.id == id }
+      product
+    else raise ProductNotFoundError, "Product id NOT found"
+    end 
   end
 
   # return a Product object for the first product in the database that has a
