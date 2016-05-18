@@ -11,15 +11,14 @@ class Udacidata
   # create the object
   # save the data in the database
   # return the object
-CSV_DATA  = File.dirname(__FILE__) + "/../data/data.csv"
+  CSV_DATA  = File.dirname(__FILE__) + "/../data/data.csv"
   def self.create(options = {})
-  product = new(options)
-    unless all.any? { |item| item.id == product.id }
-      CSV.open(CSV_DATA, 'a+') do |csv|
-        csv << [product.id, product.brand, product.name, product.price]
+    product = new(options)
+      unless all.any? { |item| item.id == product.id }
+        CSV.open(CSV_DATA, 'a+') { |csv| csv << [product.id, product.brand,
+                                  product.name, product.price] }
       end
-    end
-  product
+    product
   end
 
   # Return an array of Product objects representing all the data in the database
@@ -27,8 +26,8 @@ CSV_DATA  = File.dirname(__FILE__) + "/../data/data.csv"
   def self.all
     products = []
     CSV.foreach(CSV_DATA, headers: true) do |arr|
-      products << new(id: arr['id'].to_i, brand: arr['brand'], name: arr['product'],
-                      price: arr['price'].to_f)
+      products << new(id: arr['id'].to_i, brand: arr['brand'],
+                      name: arr['product'], price: arr['price'].to_f)
     end
     products
   end
