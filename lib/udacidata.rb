@@ -3,19 +3,6 @@ require_relative 'errors'
 require 'csv'
 
 class Udacidata
-
-
-  # Return an array of Product objects representing all the data in the database
-  def self.all
-    products = []
-    #build out next...
-    # CSV.foreach('customers.csv') do |row|
-    #   puts row.inspect
-    # end
-  end
-
-
-  def self.create(attributes = nil)
   # If the object's data is already in the database
   # create the object
   # return the object
@@ -24,6 +11,25 @@ class Udacidata
   # create the object
   # save the data in the database
   # return the object
+  CSV_DATA  = File.dirname(__FILE__) + "/../data/data.csv"
+  def self.create(options = {})
+    product = new(options)
+      unless all.any? { |item| item.id == product.id }
+        CSV.open(CSV_DATA, 'a+') { |csv| csv << [product.id, product.brand,
+                                  product.name, product.price] }
+      end
+    product
+  end
+
+  # Return an array of Product objects representing all the data in the database
+  # Used 'arr' to help me start thinking of CSV in terms of arrays
+  def self.all
+    products = []
+    CSV.foreach(CSV_DATA, headers: true) do |arr|
+      products << new(id: arr['id'].to_i, brand: arr['brand'],
+                      name: arr['product'], price: arr['price'].to_f)
+    end
+    products
   end
 # to test
   # Return an array of Product objects for the first n products in the database
@@ -50,7 +56,11 @@ class Udacidata
   # Return a Product object for the product with a given product id
   # Add a ProductNotFoundError error class to errors.rb and raise the error
   # when the product ID can’t be found
-  def find
+  def find(id)
+    if all.find{ |product| product.id == id }
+      product
+    else raise ProductNotFoundError, "Product id NOT found"
+    end 
   end
 
   # return a Product object for the first product in the database that has a
