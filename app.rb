@@ -23,11 +23,11 @@ print Product.create(brand: "MySoft", name: "stuffed animal", price: 2.09)
 print Product.create(brand: "AllMy", name: "yoyo", price: 1.00)
 print Product.create(brand: "Udacity", name: "doll", price: 5.99)
 
-# puts "-------------------"
-# puts "RETURN ALL PRODUCTS"
-# puts "-------------------"
-# print Product.all
-#
+puts "-------------------"
+puts "RETURN ALL PRODUCTS"
+puts "-------------------"
+print Product.all
+
 # puts "--------------------------------------------------------------"
 # puts "TEST ERROR HANDLING FOR DELETE - COMMENT OUT BEFORE SUBMITTING"
 # puts "--------------------------------------------------------------"
@@ -36,32 +36,32 @@ print Product.create(brand: "Udacity", name: "doll", price: 5.99)
 # puts "------------------------------------------------------------"
 # puts "TEST ERROR HANDLING FOR FIND - COMMENT OUT BEFORE SUBMITTING"
 # puts "------------------------------------------------------------"
-print Product.find(1)
-# #
-# puts
-# puts "--------------------"
-# puts "RETURN FIRST PRODUCT"
-# puts "--------------------"
-# print Product.first
+# print Product.find(1000000000000)
 #
-#
-# puts
-# puts "-----------------------"
-# puts "RETURN FIRST 2 PRODUCTS"
-# puts "-----------------------"
-# print Product.first(2)
-#
-# puts
-# puts "-------------------"
-# puts "RETURN LAST PRODUCT"
-# puts "-------------------"
-# print Product.last
-#
-# puts
-# puts "----------------------"
-# puts "RETURN LAST 2 PRODUCTS"
-# puts "----------------------"
-# print Product.last(2)
+puts
+puts "--------------------"
+puts "RETURN FIRST PRODUCT"
+puts "--------------------"
+print Product.first
+
+
+puts
+puts "-----------------------"
+puts "RETURN FIRST 2 PRODUCTS"
+puts "-----------------------"
+print Product.first(2)
+
+puts
+puts "-------------------"
+puts "RETURN LAST PRODUCT"
+puts "-------------------"
+print Product.last
+
+puts
+puts "----------------------"
+puts "RETURN LAST 2 PRODUCTS"
+puts "----------------------"
+print Product.last(2)
 #
 # puts
 # puts "-------------------------"
