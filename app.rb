@@ -27,7 +27,7 @@ puts "-------------------"
 puts "RETURN ALL PRODUCTS"
 puts "-------------------"
 print Product.all
-#
+
 # puts "--------------------------------------------------------------"
 # puts "TEST ERROR HANDLING FOR DELETE - COMMENT OUT BEFORE SUBMITTING"
 # puts "--------------------------------------------------------------"
@@ -38,30 +38,30 @@ print Product.all
 # puts "------------------------------------------------------------"
 # print Product.find(1000000000000)
 #
-# puts
-# puts "--------------------"
-# puts "RETURN FIRST PRODUCT"
-# puts "--------------------"
-# print Product.first
-#
-#
-# puts
-# puts "-----------------------"
-# puts "RETURN FIRST 2 PRODUCTS"
-# puts "-----------------------"
-# print Product.first(2)
-#
-# puts
-# puts "-------------------"
-# puts "RETURN LAST PRODUCT"
-# puts "-------------------"
-# print Product.last
-#
-# puts
-# puts "----------------------"
-# puts "RETURN LAST 2 PRODUCTS"
-# puts "----------------------"
-# print Product.last(2)
+puts
+puts "--------------------"
+puts "RETURN FIRST PRODUCT"
+puts "--------------------"
+print Product.first
+
+
+puts
+puts "-----------------------"
+puts "RETURN FIRST 2 PRODUCTS"
+puts "-----------------------"
+print Product.first(2)
+
+puts
+puts "-------------------"
+puts "RETURN LAST PRODUCT"
+puts "-------------------"
+print Product.last
+
+puts
+puts "----------------------"
+puts "RETURN LAST 2 PRODUCTS"
+puts "----------------------"
+print Product.last(2)
 #
 # puts
 # puts "-------------------------"

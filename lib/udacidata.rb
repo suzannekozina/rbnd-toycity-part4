@@ -3,15 +3,9 @@ require_relative 'errors'
 require 'csv'
 
 class Udacidata
-  # If the object's data is already in the database
-  # create the object
-  # return the object
-
-  # If the object's data is not in the database
-  # create the object
-  # save the data in the database
-  # return the object
+  # CONSTANT for datasource and pseudovariable for datasource-file
   CSV_DATA  = File.dirname(__FILE__) + "/../data/data.csv"
+
   def self.create(options = {})
     product = new(options)
       unless all.any? { |item| item.id == product.id }
@@ -31,20 +25,14 @@ class Udacidata
     products
   end
 
-  # Return a Product object that represents the first product in the database
-  def first
-  end
-
   # Return an array of Product objects for the first n products in the database
-  def first(n)
-  end
-
-  # Return a Product object that represents the last product in the database
-  def last
+  def self.first(n=1)
+    n > 1 ? all.take(n) : all.first
   end
 
   # Return an array of Product objects for the last n products in the database
-  def last(n)
+  def self.last(n=1)
+    n > 1 ? all.reverse.take(n) : all.last
   end
 
   # Delete the product corresponding to the given id from the database, and
