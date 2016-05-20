@@ -125,9 +125,9 @@ puts "RETURN AVERAGE PRICE"
 puts "--------------------"
 print Analyzable::average_price(Product.all)
 
-# puts
-# puts "--------------------"
-# puts "PRINT SUMMARY REPORT"
-# puts "--------------------"
-# print Analyzable::print_report(Product.all)
-# puts
+puts
+puts "--------------------"
+puts "PRINT SUMMARY REPORT"
+puts "--------------------"
+print Analyzable::print_report(Product.all)
+puts

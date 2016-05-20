@@ -23,11 +23,11 @@ class TestAnalyzable < MiniTest::Test
     assert_equal(14.95, avg)
   end
 
-  # def test_print_report_returns_report_string
-  #   report = Analyzable::print_report(Product.all)
-  #   assert_kind_of(String, report)
-  # end
-  #
+  def test_print_report_returns_report_string
+    report = Analyzable::print_report(Product.all)
+    assert_kind_of(String, report)
+  end
+
   def test_count_by_brand_method_returns_hash
     Product.create(brand: "FindMyBrand", name: "Skateboard", price: "11.30")
     expected = { "FindMyBrand" => 1 }
