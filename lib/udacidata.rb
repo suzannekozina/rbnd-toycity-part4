@@ -39,7 +39,15 @@ class Udacidata
   # return a Product object for the product that was deleted.
   # Add a ProductNotFoundError and raise the error when the product can’t be
   # destroyed because the given ID does not exist
-  def destroy
+  def self.destroy(n)
+    products = []
+    #smtg here each do row, CSV.table
+
+    #if find(n), delete_if, do product_object, id==n,
+
+    #update CSV
+
+    #return found and deleted object
   end
 
   # Change the information for a given Product object, and save to the database
