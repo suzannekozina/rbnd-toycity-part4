@@ -49,7 +49,6 @@ class Udacidata
   # return a Product object for the product that was deleted.
   # Add a ProductNotFoundError and raise the error when the product can’t be
   # destroyed because the given ID does not exist
-  #
   def self.destroy(id)
     product_table = CSV.table(CSV_DATA)
 
@@ -81,6 +80,11 @@ class Udacidata
   end
 
   # Return an array of Product objects that match a given brand or product name
-  def where
+  def self.where(options = {})
+    if options[:brand]
+      all.select{|product| product.brand == options [:brand]}
+    else
+      all.select{|product| product.name == options [:name]}
+    end
   end
 end

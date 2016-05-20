@@ -87,12 +87,12 @@ puts "DESTROY PRODUCT 3"
 puts "-----------------"
 print Product.destroy(3)
 
-# puts
-# puts "-------------------------------"
-# puts "RETURN PRODUCTS WITH BRAND UDACITY"
-# puts "-------------------------------"
-# print Product.where(brand: "Udacity")
-#
+puts
+puts "-------------------------------"
+puts "RETURN PRODUCTS WITH BRAND UDACITY"
+puts "-------------------------------"
+print Product.where(brand: "Udacity")
+
 # puts
 # puts "-------------------------------------"
 # puts "RETURN FIRST PRODUCT WITH GIVEN BRAND"
