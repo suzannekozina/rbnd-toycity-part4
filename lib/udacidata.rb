@@ -42,8 +42,7 @@ class Udacidata
   def destroy
   end
 
-  # Change the information for a given Product object, and save the new data to the database
-
+  # Change the information for a given Product object, and save to the database
   def update
   end
 
