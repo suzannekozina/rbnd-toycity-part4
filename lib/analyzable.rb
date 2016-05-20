@@ -1,11 +1,13 @@
 module Analyzable
 
   # Accept an array of Product objects and return a hash with inventory counts, organized by brand.
-  def count_by_brand
+  def count_by_brand(products)
+    products.group_by{|product| product.brand}.map{|brand, products| [brand, products.count]}.to_h
   end
 
   # Accept an array of Product objects and return a hash with inventory counts, organized by product name.
-  def count_by_name
+  def count_by_name(products)
+    products.group_by{|product| product.name}.map{|name, products| [name, products.count]}.to_h
   end
 
   # Accept an array of Product objects and return the average price.

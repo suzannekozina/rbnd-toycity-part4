@@ -106,19 +106,19 @@ print Product.where(brand: "Udacity")
 # puts "------------------------------------"
 # print Product.find_by_name("yoyo")
 # puts
-#
-# puts
-# puts "----------------------------"
-# puts "RETURN HASH WITH NAME COUNTS"
-# puts "----------------------------"
-# print Analyzable::count_by_name(Product.all)
-#
-# puts
-# puts "----------------------------"
-# puts "RETURN HASH WITH BRAND COUNTS"
-# puts "----------------------------"
-# print Analyzable::count_by_brand(Product.all)
-#
+
+puts
+puts "----------------------------"
+puts "RETURN HASH WITH NAME COUNTS"
+puts "----------------------------"
+print Analyzable::count_by_name(Product.all)
+
+puts
+puts "----------------------------"
+puts "RETURN HASH WITH BRAND COUNTS"
+puts "----------------------------"
+print Analyzable::count_by_brand(Product.all)
+
 puts
 puts "--------------------"
 puts "RETURN AVERAGE PRICE"
