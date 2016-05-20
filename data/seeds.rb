@@ -1,5 +1,4 @@
 require 'faker'
-# require 'csv' thought maybe I needed this, but it looks like I don't
 
 # This file contains code that populates the database with
 # fake data for testing purposes

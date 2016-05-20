@@ -3,7 +3,7 @@ require_relative 'errors'
 require 'csv'
 
 class Udacidata
-  # CONSTANT for datasource and pseudovariable for datasource-file
+  # Decided to use CONSTANT for database and pseudovariable for datasource-file
   CSV_DATA  = File.dirname(__FILE__) + "/../data/data.csv"
 
   create_finder_methods("brand", "name")
