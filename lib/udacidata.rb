@@ -6,6 +6,8 @@ class Udacidata
   # CONSTANT for datasource and pseudovariable for datasource-file
   CSV_DATA  = File.dirname(__FILE__) + "/../data/data.csv"
 
+  create_finder_methods("brand", "name")
+
   def self.create(options = {})
     product = new(options)
       unless all.any? { |item| item.id == product.id }
