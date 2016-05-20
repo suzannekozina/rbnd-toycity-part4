@@ -119,12 +119,12 @@ print Product.where(brand: "Udacity")
 # puts "----------------------------"
 # print Analyzable::count_by_brand(Product.all)
 #
-# puts
-# puts "--------------------"
-# puts "RETURN AVERAGE PRICE"
-# puts "--------------------"
-# print Analyzable::average_price(Product.all)
-#
+puts
+puts "--------------------"
+puts "RETURN AVERAGE PRICE"
+puts "--------------------"
+print Analyzable::average_price(Product.all)
+
 # puts
 # puts "--------------------"
 # puts "PRINT SUMMARY REPORT"
