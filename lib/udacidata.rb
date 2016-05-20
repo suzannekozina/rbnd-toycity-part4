@@ -64,8 +64,21 @@ class Udacidata
   end
 
   # Change the information for a given Product object, and save to the database
-  # def update(options = {})
-  # end
+  def update(options = {})
+    products = []
+    product_data = CSV.table(CSV_DATA)
+    product_data.each do |product|
+      if product[:id] == self.id
+          product[:price] = options[:price] ? options[:price] : product[:price]
+          product[:brand] = options[:brand] ? options[:brand] : product[:brand]
+          product[:name] = options[:name] ? options[:name] :  product[:name]
+          products = Product.new(id: product[:id], brand: product[:brand], name: product[:product], price: product[:price])
+      end
+    end
+    File.open(CSV_DATA, "w") { |r_edit| r_edit.write(product_data.to_csv) }
+
+    products
+  end
 
   # Return an array of Product objects that match a given brand or product name
   def where
