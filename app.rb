@@ -37,14 +37,14 @@ print Product.all
 # puts "TEST ERROR HANDLING FOR FIND - COMMENT OUT BEFORE SUBMITTING"
 # puts "------------------------------------------------------------"
 # print Product.find(1000000000000)
-#
+
 puts
 puts "--------------------"
 puts "RETURN FIRST PRODUCT"
 puts "--------------------"
 print Product.first
 
-
+#
 puts
 puts "-----------------------"
 puts "RETURN FIRST 2 PRODUCTS"
@@ -69,11 +69,11 @@ puts "DESTROY PRODUCT WITH ID 2"
 puts "-------------------------"
 print Product.destroy(2)
 
-puts
-puts "-------------------------------"
-puts "FIND PRODUCT 4 AND UPDATE BRAND"
-puts "-------------------------------"
-print Product.find(4).update(brand: "NewBrand")
+# puts
+# puts "-------------------------------"
+# puts "FIND PRODUCT 4 AND UPDATE BRAND"
+# puts "-------------------------------"
+# print Product.find(4).update(brand: "NewBrand")
 
 puts
 puts "--------------"

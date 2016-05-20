@@ -35,25 +35,6 @@ class Udacidata
     n > 1 ? all.reverse.take(n) : all.last
   end
 
-  # Delete the product corresponding to the given id from the database, and
-  # return a Product object for the product that was deleted.
-  # Add a ProductNotFoundError and raise the error when the product can’t be
-  # destroyed because the given ID does not exist
-  def self.destroy(n)
-    products = []
-    #smtg here each do row, CSV.table
-
-    #if find(n), delete_if, do product_object, id==n,
-
-    #update CSV
-
-    #return found and deleted object
-  end
-
-  # Change the information for a given Product object, and save to the database
-  def update
-  end
-
   # Return a Product object for the product with a given product id
   # Add a ProductNotFoundError error class to errors.rb and raise the error
   # when the product ID can’t be found
@@ -64,10 +45,27 @@ class Udacidata
     found_product
   end
 
-  # return a Product object for the first product in the database that has a
-  # matching brand or product name. Note: Use metaprogramming techniques to define these methods.
-  def find_by#{attribute}
+  # Delete the product corresponding to the given id from the database, and
+  # return a Product object for the product that was deleted.
+  # Add a ProductNotFoundError and raise the error when the product can’t be
+  # destroyed because the given ID does not exist
+  #
+  def self.destroy(id)
+    product_table = CSV.table(CSV_DATA)
+
+    if found_product = all.find{ |product| product.id == id }
+    else raise ProductNotFoundError, "Product id NOT found"
+    end
+    product_table.delete_if { |row| row[:id] == id }
+
+    File.open(CSV_DATA, "w") { |r_edit| r_edit.write(product_table.to_csv) }
+
+    found_product
   end
+
+  # Change the information for a given Product object, and save to the database
+  # def update(options = {})
+  # end
 
   # Return an array of Product objects that match a given brand or product name
   def where
