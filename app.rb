@@ -6,7 +6,7 @@ include Analyzable
 
 # Uncomment the following code once ALL your tests have passed!
 
-db_create #Faker gem still doesn't seem to be working for some reason
+db_create
 
 puts "-------------------"
 puts "RETURN ALL PRODUCTS"
